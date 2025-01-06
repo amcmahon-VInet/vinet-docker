@@ -1,0 +1,17 @@
+services:
+  vinet:
+    container_name: vinet-sql
+    hostname: vinet-sql
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    restart: unless-stopped
+    ports:
+      - 1433:1433
+    volumes:
+      - ~/Applications/docker-data/vinet-sql/data:/var/opt/mssql/data
+      - ~/Applications/docker-data/vinet-sql/log:/var/opt/mssql/log
+      - ~/Applications/docker-data/vinet-sql/secrets:/var/opt/mssql/secrets
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=yourStrong(!)Password
+    network_mode: bridge
+    pull_policy: always
