@@ -1,0 +1,12 @@
+services:
+  sftp:
+    container_name: sftp
+    image: atmoz/sftp
+    restart: unless-stopped
+    volumes:
+        - ~/Applications/docker-data/sftp/upload:/home/admin/upload
+    ports:
+        - 2222:22
+    command: admin:password:1001:::upload
+    network_mode: bridge
+    pull_policy: always
