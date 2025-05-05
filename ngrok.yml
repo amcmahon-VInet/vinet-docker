@@ -13,6 +13,5 @@ services:
       - "--all"
       - "--config"
       - "/etc/ngrok.yml"
-      - "--host-header=rewrite"
     volumes:
       - ~/Applications/docker-data/ngrok/ngrok.yml:/etc/ngrok.yml
