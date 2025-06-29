@@ -7,5 +7,8 @@ services:
     ports:
       - 18888:18888
       - 4317:18889
+    environment:
+      DASHBOARD__OTLP__AUTHMODE: ${DASHBOARD__OTLP__AUTHMODE}
+      DASHBOARD__OTLP__PRIMARYAPIKEY: ${DASHBOARD__OTLP__PRIMARYAPIKEY}
     network_mode: bridge
     pull_policy: always
