@@ -1,0 +1,11 @@
+services:
+  cosmos:
+    container_name: cosmos
+    hostname: cosmos
+    image: mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:latest
+    restart: unless-stopped
+    ports:
+      - 8081:8081
+      - 10250-10255:10250-10255
+    network_mode: bridge
+    pull_policy: always
