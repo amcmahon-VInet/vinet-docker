@@ -8,10 +8,7 @@ services:
       - 8082:8081
       - 1234:1234
     environment:
-      - AZURE_COSMOS_EMULATOR_ENABLE_DATA_PERSISTENCE=true
       - PROTOCOL=https
-    volumes:
-      - ~/Applications/docker-data/cosmosdb/data:/data
     network_mode: bridge
     pull_policy: always
   
