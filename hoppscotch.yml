@@ -7,8 +7,8 @@ services:
       - ~/Applications/docker-data/hoppscotch/upload:/home/admin/upload
     ports:
       - ${FRONTEND_PORT}:3000
-      - ${BACKEND_PORT}:3100
-      - ${ADMIN_PORT}:3170
+      - ${BACKEND_PORT}:3170
+      - ${ADMIN_PORT}:3100
       - ${APP_PORT}:3200
     environment:
       - DATABASE_URL=${DATABASE_URL}
