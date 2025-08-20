@@ -24,3 +24,7 @@ services:
       - default
       - postgres_network
     pull_policy: always
+
+networks:
+  postgres_network:
+    external: true
