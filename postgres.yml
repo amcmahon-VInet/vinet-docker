@@ -17,4 +17,3 @@ services:
 
 networks:
   postgres_network:
-    external: true
