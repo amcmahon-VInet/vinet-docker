@@ -3,8 +3,6 @@ services:
     container_name: hoppscotch
     image: hoppscotch/hoppscotch
     restart: unless-stopped
-    volumes:
-      - ~/Applications/docker-data/hoppscotch/upload:/home/admin/upload
     ports:
       - ${FRONTEND_PORT}:3000
       - ${BACKEND_PORT}:3170
@@ -22,5 +20,5 @@ services:
       - VITE_BACKEND_WS_URL=${VITE_BACKEND_WS_URL}
       - VITE_BACKEND_API_URL=${VITE_BACKEND_API_URL}
       - ENABLE_SUBPATH_BASED_ACCESS=${ENABLE_SUBPATH_BASED_ACCESS}
-    network_mode: bridge
+    network_mode: host
     pull_policy: always
