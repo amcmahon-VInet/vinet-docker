@@ -1,0 +1,11 @@
+services:
+  postgres:
+    container_name: postgres
+    hostname: postgres
+    image: postgres
+    restart: unless-stopped
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ~/Applications/docker-data/postgres:/var/lib/postgresql
