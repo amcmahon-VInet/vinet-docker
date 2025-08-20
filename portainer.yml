@@ -1,0 +1,15 @@
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    environment:
+      - TZ=Australia/Sydney
+    volumes:
+      - ~/Applications/docker-data/portainer:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 8000:8000
+      - 9443:9443
+    pull_policy: always
