@@ -9,7 +9,12 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ~/Applications/docker-data/postgres:/var/lib/postgresql
-    network_mode: host
+    networks:
+      - postgres_network
     ports:
       - 5432:5432
     pull_policy: always
+
+networks:
+  postgres_network:
+    external: true
