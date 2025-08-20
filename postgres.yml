@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ~/Applications/docker-data/postgres:/var/lib/postgresql
-    network_mode: bridge
+    network_mode: host
     ports:
       - 5432:5432
     pull_policy: always
